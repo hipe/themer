@@ -1,5 +1,18 @@
-ohai i am a template
+<!doctype html>
+<html>
+
+<body>
+<h1>these are some sounds.</h1>
+<table>
+<tbody>
 {% for sound in sounds %}
-  sound: {{ sound }}
+<tr>
+    <td>{{ sound }}</td>
+    <td><button>preview</button><button>set</button></td>
+</tr>
 {% endfor %}
-that was the template.
+</tbody>
+</table>
+<p>those were the sounds.</p>
+</body>
+</html>
