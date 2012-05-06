@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 0.1em 0.35em;
+}
+
+.inner {
+    width: 1px;
+    -webkit-transform: rotate(-90deg);
+    position: relative;
+    top: 70px;
+}
+
+.inner2 {
+    float: left;
+    text-align: left;
+    width: 120px;
+}
+
+
+tr.labels th {
+    height: 140px;
+}
+
+div.main {
+    /*border: 1.5px solid black;
+    border-radius: 8px;*/
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.35em 0.5em;
+    width: 600px;
+}

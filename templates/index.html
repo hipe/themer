@@ -1,19 +1,35 @@
 <!doctype html>
 <html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',
+filename='css/app.css') }}" />
 <script type='javascript' src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 <body>
+<div class='main'>
 <h1>these are some sounds.</h1>
+<form>
 <table>
 <tbody>
+<tr class='labels'>
+    <th></th>
+    <th><div class='inner'><div class='inner2'>use this sound</div></div></th>
+    <th><div class='inner'><div class='inner2'>preview</div></div></th>
+</tr>
 {% for sound in sounds %}
 <tr>
     <td>{{ sound }}</td>
-    <td><button>preview</button><button>set</button></td>
+    <td class='activatedd'>
+        <input type="radio" name="sound" value="{{ sound }}" />
+    </td>
+    <td>
+        <button class="preview" data-sound="{{ sound }}">&#x25B6;</button>
+    </td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
+</form>
 <p>those were the sounds.</p>
+</div>
 </body>
 </html>
