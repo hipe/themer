@@ -8,6 +8,9 @@ filename='css/app.css') }}" />
 <div class='main'>
 <h1>these are some sounds.</h1>
 <form>
+{% if no_sounds %}
+<p class='error'>There are no sound files in the sound file directory.</p>
+{% else %}
 <table>
 <tbody>
 <tr class='labels'>
@@ -17,17 +20,18 @@ filename='css/app.css') }}" />
 </tr>
 {% for sound in sounds %}
 <tr>
-    <td>{{ sound }}</td>
+    <td>{{ sound.label }}</td>
     <td class='activatedd'>
-        <input type="radio" name="sound" value="{{ sound }}" />
+        <input type="radio" name="sound" value="{{ sound.id }}" />
     </td>
     <td>
-        <button class="preview" data-sound="{{ sound }}">&#x25B6;</button>
+        <button class="preview" data-sound="{{ sound.id }}">&#x25B6;</button>
     </td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
+{% endif %}
 </form>
 <p>those were the sounds.</p>
 </div>
