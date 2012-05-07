@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+_ = os.path.normpath(os.path.join(__file__, '../../lib'))
+sys.path.append(_)
+
+import app.server
+
+app.server.server.run(host='0.0.0.0', debug=True)
+
