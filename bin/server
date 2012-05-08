@@ -3,8 +3,7 @@
 import os
 import sys
 
-_ = os.path.normpath(os.path.join(__file__, '../../lib'))
-sys.path.append(_)
+sys.path.append(os.path.normpath(os.path.join(__file__, '../../lib')))
 
 import app.server
 

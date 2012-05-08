@@ -17,6 +17,7 @@ filename='css/app.css') }}" />
     <th></th>
     <th><div class='inner'><div class='inner2'>use this sound</div></div></th>
     <th><div class='inner'><div class='inner2'>preview</div></div></th>
+    <th class='player'>&nbsp;</th>
 </tr>
 {% for sound in sounds %}
 <tr>
@@ -26,6 +27,11 @@ filename='css/app.css') }}" />
     </td>
     <td>
         <button class="preview" data-sound="{{ sound.id }}">&#x25B6;</button>
+    </td>
+    <td class='player'>
+      <audio controls="controls">
+      <source src="/static/sounds/{{sound.filename}}" type="{{sound.mime_type}}" />
+      </audio>
     </td>
 </tr>
 {% endfor %}

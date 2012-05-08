@@ -4,6 +4,7 @@ from flask import url_for
 import subprocess
 import os
 import app.constant
+from app.sound import Sound
 
 
 server = Flask(__name__)
@@ -15,15 +16,13 @@ def sounds_dir():
 def sounds():
     for dirname, _dirnames, filenames in os.walk(sounds_dir()):
         _filtered = filter(lambda x: app.constant.SOUND_RE.search(x), filenames)
-        return map(lambda filename: {'label' : filename, 'id' : filename,
-            'path' : os.path.join(dirname, filename)}, _filtered)
-
+        _res = map(lambda x: Sound(x, dirname), _filtered)
+        return _res
 
 @server.route('/')
 def index():
     _sounds = sounds()
-    return render_template('index.html', sounds=_sounds, no_sounds=(0 ==
-        len(_sounds)))
+    return render_template('index.html', sounds=_sounds, no_sounds=(0 == len(_sounds)))
 
 def test():
     [ user, password ] = get_cred

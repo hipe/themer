@@ -29,6 +29,18 @@ tr.labels th {
     height: 140px;
 }
 
+
+th.player, td.player {
+    border: none;
+}
+td.player {
+    padding: 0;
+}
+td.player audio {
+    width: 150px;
+}
+
+
 div.main {
     /*border: 1.5px solid black;
     border-radius: 8px;*/
@@ -37,3 +49,10 @@ div.main {
     padding: 0.35em 0.5em;
     width: 600px;
 }
+
+.player {
+    border: 1px solid black;
+    margin: 0 0 30px 0;
+    padding: 10px;
+}
+
